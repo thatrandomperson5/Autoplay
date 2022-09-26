@@ -1,0 +1,24 @@
+#mainframe {
+  border: none;
+  height: 100%;
+  width: 100%;
+  background: none;
+  position: absolute;
+}
+body {
+  background-color: grey;
+  height: 100%;
+}
+.main-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.main-bg > h1 {
+  font-family: hack, monospace;
+  font-size: 425%;
+  color: white;
+}
