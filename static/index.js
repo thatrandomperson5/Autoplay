@@ -17,5 +17,5 @@ if (!(url.searchParams.has("id"))) {
   let mainframe = document.getElementById("mainframe");
   mainframe.setAttribute("src", processed);
   let ytdata = JSON.parse(httpGet(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${processed}`));
-  document.getElementById("title").textContent = `Autoplay - ${ytdata["title"])}`
+  document.getElementById("title").textContent = `Autoplay - ${ytdata["title"]}`
 }
