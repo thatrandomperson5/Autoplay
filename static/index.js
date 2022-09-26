@@ -1,4 +1,4 @@
-let url = new URL(window.href)
+let url = new URL(window.location.href)
 if (!(url.searchParams.has("id"))) {
   alert("No url provided");
 } else {
