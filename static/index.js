@@ -13,7 +13,7 @@ if (!(url.searchParams.has("id"))) {
 } else {
   let input = url.searchParams.get("id");
   // www.youtube.com/embed/${}
-  let processed = `https://www.youtube.com/embed/${input}`;
+  let processed = `https://www.youtube.com/embed/${input}?autoplay=1`;
   let mainframe = document.getElementById("mainframe");
   mainframe.setAttribute("src", processed);
   let ytdata = JSON.parse(httpGet(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${processed}`));
