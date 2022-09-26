@@ -1,3 +1,12 @@
+//https://stackoverflow.com/questions/247483/http-get-request-in-javascript
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
 let url = new URL(window.location.href)
 if (!(url.searchParams.has("id"))) {
   alert("No url provided");
@@ -7,5 +16,6 @@ if (!(url.searchParams.has("id"))) {
   let processed = `https://www.youtube.com/embed/${input}`;
   let mainframe = document.getElementById("mainframe");
   mainframe.setAttribute("src", processed);
-  document.getElementById("title").textContent = `Autoplay - ${mainframe.contentWindow.document.title}`
+	let ytdata = JSON.parse(httpGet(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${processed}`));
+  document.getElementById("title").textContent = `Autoplay - ${ytdata.get("title")}`
 }
