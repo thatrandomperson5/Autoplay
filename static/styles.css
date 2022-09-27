@@ -22,3 +22,16 @@ body {
   font-size: 425%;
   color: white;
 }
+.hover {
+  z-index: 15;
+  position: absolute;
+  font-family: hack, monospace;
+  width: 95%;
+  margin: 5em 0 0 0;
+  text-align: right;
+}
+.hover > a {
+  width: 100%;
+  color: white;
+  text-align: right;
+}
