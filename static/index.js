@@ -1,12 +1,12 @@
 // aria-label Play
-var url = new URL("https://google.com/?id=dQw4w9WgXcQ")
+var url = new URL(window.location.href)
 if (url.searchParams.has("b64")) {
 	url = new URL(`https://autoplay.vercel.app/?${atob(url.searchParams.get("b64"))}`)
 }
 if (!(url.searchParams.has("id"))) {
   alert("No url provided");
 } else {	
-	var fullurl = `https://www.youtube.com/embed/${url.searchParams.get("id")}?enablejsapi=1&controls=0&disablekb=1&fs=0&modestbranding=1&origin=https://autoplay.vercel.app&playsinline=1`
+	var fullurl = `https://www.youtube.com/embed/${url.searchParams.get("id")}?enablejsapi=1&controls=0&disablekb=1&fs=0&modestbranding=1&origin=autoplay.vercel.app&playsinline=1`
   let mainframe = document.getElementById("mainframe")
 	mainframe.setAttribute("src", fullurl)
 }
