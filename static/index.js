@@ -26,6 +26,7 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
+  document.getElementById("title").textContent = `Autoplay - ${player.getVideoData().title}`;
   event.target.playVideo();
 }
 
