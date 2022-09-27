@@ -27,10 +27,10 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-	document.getElementById("title").textContent = `Autoplay - ${player.getVideoData().title}`;
-	console.log("starting...");
-	console.log(player.getIframe().contentWindow.document);
-  	console.log(document.querySelector('[aria-label="Play"]'));
+    document.getElementById("title").textContent = `Autoplay - ${player.getVideoData().title}`;
+    console.info("starting...");
+    console.info(player.getIframe().contentWindow.document);
+    console.info(document.querySelector('[aria-label="Play"]'));
 }
 
 function stopVideo() {
