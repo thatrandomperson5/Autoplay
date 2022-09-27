@@ -8,6 +8,7 @@
 body {
   background-color: grey;
   height: 100%;
+  margin: 0;
 }
 .main-bg {
   display: flex;
