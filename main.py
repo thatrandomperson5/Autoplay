@@ -14,7 +14,7 @@ def main():
   return render_template("index.html")
 @app.route("/tools/getVid-<id>")
 def getvid(id):
-  ytid = re.compile(r"\A([^"&?/\s]{11})$")
+  ytid = re.compile(r'\A([^"&?/\s]{11})$')
   if ytid.match(id):
     req = requests.get(f"https://www.youtube.com/embed/{id}?enablejsapi=1&controls=0&disablekb=1&fs=0&modestbranding=1&origin={request.host}&playsinline=1&rel=0")
     return req.content
