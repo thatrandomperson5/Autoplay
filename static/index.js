@@ -6,7 +6,7 @@ if (url.searchParams.has("b64")) {
 if (!(url.searchParams.has("id"))) {
   alert("No url provided");
 } else {	
-	var fullurl = `https://www.youtube.com/embed/${url.searchParams.get("id")}?enablejsapi=1&controls=0&disablekb=1&fs=0&modestbranding=1&origin=autoplay.vercel.app&playsinline=1`
+	var fullurl = `https://www.youtube.com/embed/${url.searchParams.get("id")}?enablejsapi=1&controls=0&disablekb=1&fs=0&modestbranding=1&origin=${document.domain}&playsinline=1`
   let mainframe = document.getElementById("mainframe")
 	mainframe.setAttribute("src", fullurl)
 }
