@@ -24,6 +24,8 @@ function onYouTubeIframeAPIReady() {
       'onReady': onPlayerReady,
     }
   });
+  let ifr = player.getIframe()
+  ifr.onload = onPlayerReady
 }
 
 function onPlayerReady(event) {
