@@ -10,4 +10,4 @@ def home():
     return redirect(url_for("main", **request.args.to_dict()))
 @app.route("/play")
 def main():
-  return render_template("/index.html")
+  return render_template("index.html")
