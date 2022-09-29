@@ -21,6 +21,7 @@ def getvid(id):
   if ytid.match(id):
     rq = requests.get(f"https://inv.riverside.rocks/api/v1/videos/{id}?fields=title,author,formatStreams&pretty=1")
     streamUrlDict = {}
+    raise Exception(rq.json())
     for key, value in rq.json().items():
       streamUrlDict[value["resolution"]] = {"type":value["type"],"url":value["url"]}
     return render_template("player.html", 
