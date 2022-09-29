@@ -26,11 +26,11 @@ def getvid(id):
       streamUrlDict[value["resolution"]] = {"type":value["type"],"url":value["url"]}
     return render_template("player.html", 
                            vid144=streamUrlDict["144p"]["url"], 
-                           vid144t = streamUrlDict["144p"]["type"],
+                           vid144t = streamUrlDict["144p"]["type"].split(";")[0],
                            vid360=streamUrlDict["360p"]["url"], 
-                           vid360t = streamUrlDict["360p"]["type"],
+                           vid360t = streamUrlDict["360p"]["type"].split(";")[0],
                            vid720=streamUrlDict["720p"]["url"], 
-                           vid720t = streamUrlDict["720p"]["type"],
+                           vid720t = streamUrlDict["720p"]["type"].split(";")[0],
                           )
   else:
     abort(400)
