@@ -19,8 +19,17 @@ def getvid(id):
   ytid = re.compile(r'\A([^"&?/\s]{11})$')
   headers = {}
   if ytid.match(id):
-    req = requests.get(f"https://www.youtube.com/embed/{id}?enablejsapi=1&controls=0&disablekb=1&fs=0&modestbranding=1&origin={request.host}&playsinline=1&rel=0", headers=headers)
-    print(req.url)
-    return req.content
+    rq = requests.get(f"https://inv.riverside.rocks/api/v1/videos/{id}?fields=title,author,formatStreams&pretty=1")
+    streamUrlDict = {}
+    for key, value in rq.json().items():
+      streamUrlDict[value["resolution"]] = {"type":value["type"],"url":value["url"]}
+    return render_template("player.html", 
+                           vid144=streamUrlDict["144p"]["url"], 
+                           vid144t = streamUrlDict["144p"]["type"],
+                           vid360=streamUrlDict["360p"]["url"], 
+                           vid360t = streamUrlDict["360p"]["type"],
+                           vid720=streamUrlDict["720p"]["url"], 
+                           vid720t = streamUrlDict["720p"]["type"],
+                          )
   else:
     abort(400)
