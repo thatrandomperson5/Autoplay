@@ -22,7 +22,7 @@ def getvid(id):
     rq = requests.get(f"https://inv.riverside.rocks/api/v1/videos/{id}?fields=title,author,formatStreams&pretty=1")
     streamUrlDict = {}
     outjson = rq.json()
-    for key, value in outjson["formatStreams"].items():
+    for value in outjson["formatStreams"]:
       streamUrlDict[value["resolution"]] = {"type":value["type"],"url":value["url"]}
     return render_template("player.html", 
                            vid144=streamUrlDict["144p"]["url"], 
