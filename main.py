@@ -31,6 +31,8 @@ def getvid(id):
                            vid360t = streamUrlDict["360p"]["type"].split(";")[0],
                            vid720=streamUrlDict["720p"]["url"], 
                            vid720t = streamUrlDict["720p"]["type"].split(";")[0],
+                           author=outjson["author"],
+                           title=outjson["title"]
                           )
   else:
     abort(400)
